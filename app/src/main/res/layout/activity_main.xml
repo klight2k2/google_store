@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="0dp">
+
+        <EditText
+            android:id="@+id/editTextText"
+            android:layout_width="336dp"
+            android:layout_height="56dp"
+            android:ems="10"
+            android:inputType="text"
+            android:padding="8dp"
+            android:focusableInTouchMode="false"
+            android:hint="Enter your app you want to search"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints" />
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:src="@drawable/mic"
+            app:layout_constraintLeft_toRightOf="@id/editTextText" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+
+            android:src="@drawable/bell"
+            app:layout_constraintEnd_toEndOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
+        android:layout_width="match_parent"
+        app:tabMode="scrollable"
+        android:layout_height="wrap_content"
+        app:tabTextAppearance="@style/CustomTabTextAppearance"
+        app:layout_constraintTop_toBottomOf="@id/search">
+
+        <com.google.android.material.tabs.TabItem android:text="For you"  android:layout_height="match_parent" android:layout_width="wrap_content"/>
+        <com.google.android.material.tabs.TabItem android:text="Top charts"  android:layout_height="match_parent" android:layout_width="wrap_content"/>
+        <com.google.android.material.tabs.TabItem android:text="Other device"  android:layout_height="match_parent" android:layout_width="wrap_content"/>
+        <com.google.android.material.tabs.TabItem android:text="Game"  android:layout_height="match_parent" android:layout_width="wrap_content"/>
+        <com.google.android.material.tabs.TabItem android:text="Book"  android:layout_height="match_parent" android:layout_width="wrap_content"/>
+        <com.google.android.material.tabs.TabItem android:text="Học"  android:layout_height="match_parent" android:layout_width="wrap_content"/>
+        <com.google.android.material.tabs.TabItem android:text="Học"  android:layout_height="match_parent" android:layout_width="wrap_content"/>
+
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rcv_category"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout"
+        tools:layout_editor_absoluteX="0dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
